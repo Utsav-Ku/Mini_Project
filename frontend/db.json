@@ -1,0 +1,120 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@hospital.com",
+      "password": "admin123",
+      "role": "admin",
+      "linkedId": null
+    }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr Rajesh Kumar",
+      "specialization": "Cardiology",
+      "qualification": "MBBS, MD",
+      "experience": 10,
+      "availability": [],
+      "fee": 600,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Dr Ananya Verma",
+      "specialization": "Cardiology",
+      "qualification": "MBBS, DM",
+      "experience": 7,
+      "availability": [],
+      "fee": 500,
+      "active": true
+    },
+
+    {
+      "id": 3,
+      "name": "Dr Rohit Singh",
+      "specialization": "Orthopedics",
+      "qualification": "MBBS, MS",
+      "experience": 9,
+      "availability": [],
+      "fee": 550,
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Dr Neha Patel",
+      "specialization": "Orthopedics",
+      "qualification": "MBBS, MS",
+      "experience": 6,
+      "availability": [],
+      "fee": 500,
+      "active": true
+    },
+
+    {
+      "id": 5,
+      "name": "Dr Aman Gupta",
+      "specialization": "Neurology",
+      "qualification": "MBBS, DM",
+      "experience": 11,
+      "fee": 700,
+      "availability": [],
+      "active": true
+    },
+    {
+      "id": 6,
+      "name": "Dr Pooja Mehta",
+      "specialization": "Neurology",
+      "qualification": "MBBS, DM",
+      "experience": 8,
+      "fee": 650,
+      "availability": [],
+      "active": true
+    },
+
+    {
+      "id": 7,
+      "name": "Dr Karan Shah",
+      "specialization": "Dermatology",
+      "qualification": "MBBS, MD",
+      "experience": 5,
+      "fee": 400,
+      "availability": [],
+      "active": true
+    },
+    {
+      "id": 8,
+      "name": "Dr Ritu Malhotra",
+      "specialization": "Dermatology",
+      "qualification": "MBBS, MD",
+      "experience": 7,
+      "fee": 450,
+      "availability": [],
+      "active": true
+    },
+
+    {
+      "id": 9,
+      "name": "Dr Suresh Iyer",
+      "specialization": "Pediatrics",
+      "qualification": "MBBS, MD",
+      "experience": 12,
+      "fee": 500,
+      "availability": [],
+      "active": true
+    },
+    {
+      "id": 10,
+      "name": "Dr Meena Rao",
+      "specialization": "Pediatrics",
+      "qualification": "MBBS, MD",
+      "experience": 9,
+      "fee": 480,
+      "availability": [],
+      "active": true
+    }
+  ],
+
+  "patients": [],
+  "appointments": []
+}
