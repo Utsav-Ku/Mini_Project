@@ -265,6 +265,14 @@
       "slot": "09:00 - 09:30",
       "status": "pending",
       "date": "2026-02-07"
+    },
+    {
+      "doctorId": "1",
+      "patientId": "c512",
+      "slot": "09:30 - 10:00",
+      "status": "pending",
+      "date": "2026-02-07",
+      "id": "xGhPBL9"
     }
   ],
   "patients": [
@@ -275,6 +283,14 @@
       "password": "123456Aa@",
       "age": "22",
       "gender": "Male"
+    },
+    {
+      "name": "Test",
+      "email": "test@gmail.com",
+      "password": "test123",
+      "age": "25",
+      "gender": "Male",
+      "id": "vtLznHp"
     }
   ]
 }
