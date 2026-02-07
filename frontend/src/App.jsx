@@ -1,5 +1,6 @@
 
 // import PatientRegister from "./pages/patientRegister.jsx"
+// npx json-server --watch db.json --port 3000 -> cmnd to run json server
 import { Routes, Route, Navigate } from "react-router-dom"
 import PatientLogin from "./pages/patientLogin.jsx"
 import PatientHomePage from "./pages/patientHomePage.jsx"
