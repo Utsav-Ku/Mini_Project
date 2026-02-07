@@ -1,120 +1,263 @@
 {
-  "users": [
+  "admins": [
     {
-      "id": 1,
+      "id": "1",
       "email": "admin@hospital.com",
       "password": "admin123",
-      "role": "admin",
-      "linkedId": null
+      "role": "admin"
     }
   ],
   "doctors": [
     {
-      "id": 1,
-      "name": "Dr Rajesh Kumar",
+      "id": "1",
+      "name": "Dr. Amit Sharma",
       "specialization": "Cardiology",
-      "qualification": "MBBS, MD",
-      "experience": 10,
-      "availability": [],
-      "fee": 600,
-      "active": true
-    },
-    {
-      "id": 2,
-      "name": "Dr Ananya Verma",
-      "specialization": "Cardiology",
-      "qualification": "MBBS, DM",
-      "experience": 7,
-      "availability": [],
-      "fee": 500,
-      "active": true
-    },
-
-    {
-      "id": 3,
-      "name": "Dr Rohit Singh",
-      "specialization": "Orthopedics",
-      "qualification": "MBBS, MS",
-      "experience": 9,
-      "availability": [],
-      "fee": 550,
-      "active": true
-    },
-    {
-      "id": 4,
-      "name": "Dr Neha Patel",
-      "specialization": "Orthopedics",
-      "qualification": "MBBS, MS",
-      "experience": 6,
-      "availability": [],
-      "fee": 500,
-      "active": true
-    },
-
-    {
-      "id": 5,
-      "name": "Dr Aman Gupta",
-      "specialization": "Neurology",
-      "qualification": "MBBS, DM",
-      "experience": 11,
-      "fee": 700,
-      "availability": [],
-      "active": true
-    },
-    {
-      "id": 6,
-      "name": "Dr Pooja Mehta",
-      "specialization": "Neurology",
-      "qualification": "MBBS, DM",
-      "experience": 8,
-      "fee": 650,
-      "availability": [],
-      "active": true
-    },
-
-    {
-      "id": 7,
-      "name": "Dr Karan Shah",
-      "specialization": "Dermatology",
-      "qualification": "MBBS, MD",
-      "experience": 5,
-      "fee": 400,
-      "availability": [],
-      "active": true
-    },
-    {
-      "id": 8,
-      "name": "Dr Ritu Malhotra",
-      "specialization": "Dermatology",
-      "qualification": "MBBS, MD",
-      "experience": 7,
-      "fee": 450,
-      "availability": [],
-      "active": true
-    },
-
-    {
-      "id": 9,
-      "name": "Dr Suresh Iyer",
-      "specialization": "Pediatrics",
-      "qualification": "MBBS, MD",
       "experience": 12,
-      "fee": 500,
-      "availability": [],
-      "active": true
+      "image": "https://i.pravatar.cc/150?img=1",
+      "workStart": "09:00",
+      "workEnd": "17:00",
+      "slotDuration": 30,
+      "email": "amit@hospital.com",
+      "password": "doctor123"
     },
     {
-      "id": 10,
-      "name": "Dr Meena Rao",
+      "id": "2",
+      "name": "Dr. Arjun Patel",
+      "specialization": "Cardiology",
+      "experience": 16,
+      "image": "https://i.pravatar.cc/150?img=11",
+      "workStart": "10:00",
+      "workEnd": "18:00",
+      "slotDuration": 30,
+      "email": "arjun@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "3",
+      "name": "Dr. Sanjay Malhotra",
+      "specialization": "Cardiology",
+      "experience": 19,
+      "image": "https://i.pravatar.cc/150?img=19",
+      "workStart": "08:00",
+      "workEnd": "16:00",
+      "slotDuration": 30,
+      "email": "sanjay@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "4",
+      "name": "Dr. Neha Verma",
+      "specialization": "Dermatology",
+      "experience": 8,
+      "image": "https://i.pravatar.cc/150?img=2",
+      "workStart": "10:00",
+      "workEnd": "18:00",
+      "slotDuration": 30,
+      "email": "neha@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "5",
+      "name": "Dr. Sneha Kapoor",
+      "specialization": "Dermatology",
+      "experience": 7,
+      "image": "https://i.pravatar.cc/150?img=10",
+      "workStart": "11:00",
+      "workEnd": "19:00",
+      "slotDuration": 30,
+      "email": "sneha@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "6",
+      "name": "Dr. Rajesh Kumar",
+      "specialization": "Orthopedics",
+      "experience": 15,
+      "image": "https://i.pravatar.cc/150?img=3",
+      "workStart": "09:00",
+      "workEnd": "17:00",
+      "slotDuration": 30,
+      "email": "rajesh@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "7",
+      "name": "Dr. Rohit Bansal",
+      "specialization": "Orthopedics",
+      "experience": 10,
+      "image": "https://i.pravatar.cc/150?img=13",
+      "workStart": "10:00",
+      "workEnd": "18:00",
+      "slotDuration": 30,
+      "email": "rohit@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "8",
+      "name": "Dr. Pooja Singh",
+      "specialization": "Gynecology",
+      "experience": 10,
+      "image": "https://i.pravatar.cc/150?img=4",
+      "workStart": "11:00",
+      "workEnd": "19:00",
+      "slotDuration": 30,
+      "email": "pooja@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "9",
+      "name": "Dr. Alka Mishra",
+      "specialization": "Gynecology",
+      "experience": 17,
+      "image": "https://i.pravatar.cc/150?img=14",
+      "workStart": "09:00",
+      "workEnd": "17:00",
+      "slotDuration": 30,
+      "email": "alka@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "10",
+      "name": "Dr. Anil Mehta",
+      "specialization": "Neurology",
+      "experience": 18,
+      "image": "https://i.pravatar.cc/150?img=5",
+      "workStart": "08:00",
+      "workEnd": "16:00",
+      "slotDuration": 30,
+      "email": "anil@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "11",
+      "name": "Dr. Meena Nair",
+      "specialization": "Neurology",
+      "experience": 14,
+      "image": "https://i.pravatar.cc/150?img=12",
+      "workStart": "09:00",
+      "workEnd": "17:00",
+      "slotDuration": 30,
+      "email": "meena@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "12",
+      "name": "Dr. Kavita Rao",
       "specialization": "Pediatrics",
-      "qualification": "MBBS, MD",
       "experience": 9,
-      "fee": 480,
-      "availability": [],
-      "active": true
+      "image": "https://i.pravatar.cc/150?img=6",
+      "workStart": "09:00",
+      "workEnd": "17:00",
+      "slotDuration": 30,
+      "email": "kavita@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "13",
+      "name": "Dr. Nisha Gupta",
+      "specialization": "Pediatrics",
+      "experience": 6,
+      "image": "https://i.pravatar.cc/150?img=16",
+      "workStart": "10:00",
+      "workEnd": "18:00",
+      "slotDuration": 30,
+      "email": "nisha@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "14",
+      "name": "Dr. Suresh Iyer",
+      "specialization": "ENT",
+      "experience": 14,
+      "image": "https://i.pravatar.cc/150?img=7",
+      "workStart": "10:00",
+      "workEnd": "18:00",
+      "slotDuration": 30,
+      "email": "suresh@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "15",
+      "name": "Dr. Vikram Joshi",
+      "specialization": "ENT",
+      "experience": 13,
+      "image": "https://i.pravatar.cc/150?img=9",
+      "workStart": "11:00",
+      "workEnd": "19:00",
+      "slotDuration": 30,
+      "email": "vikram@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "16",
+      "name": "Dr. Ritu Malhotra",
+      "specialization": "Ophthalmology",
+      "experience": 11,
+      "image": "https://i.pravatar.cc/150?img=8",
+      "workStart": "09:00",
+      "workEnd": "17:00",
+      "slotDuration": 30,
+      "email": "ritu@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "17",
+      "name": "Dr. Ayesha Khan",
+      "specialization": "Ophthalmology",
+      "experience": 11,
+      "image": "https://i.pravatar.cc/150?img=20",
+      "workStart": "11:00",
+      "workEnd": "19:00",
+      "slotDuration": 30,
+      "email": "ayesha@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "18",
+      "name": "Dr. Vikram Joshi",
+      "specialization": "Psychiatry",
+      "experience": 13,
+      "image": "https://i.pravatar.cc/150?img=9",
+      "workStart": "10:00",
+      "workEnd": "18:00",
+      "slotDuration": 30,
+      "email": "psy.vikram@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "19",
+      "name": "Dr. Priya Kulkarni",
+      "specialization": "Psychiatry",
+      "experience": 8,
+      "image": "https://i.pravatar.cc/150?img=18",
+      "workStart": "09:00",
+      "workEnd": "17:00",
+      "slotDuration": 30,
+      "email": "priya@hospital.com",
+      "password": "doctor123"
+    },
+    {
+      "id": "20",
+      "name": "Dr. Manoj Chatterjee",
+      "specialization": "General Medicine",
+      "experience": 20,
+      "image": "https://i.pravatar.cc/150?img=17",
+      "workStart": "08:00",
+      "workEnd": "16:00",
+      "slotDuration": 30,
+      "email": "manoj@hospital.com",
+      "password": "doctor123"
     }
   ],
-
-  "patients": [],
-  "appointments": []
+  "appointments": [],
+  "patients": [
+    {
+      "id": "c512",
+      "name": "utkarsh Kumar",
+      "email": "utkarshkumarsingh8789@gmail.com",
+      "password": "123456Aa@",
+      "age": "22",
+      "gender": "Male"
+    }
+  ]
 }
