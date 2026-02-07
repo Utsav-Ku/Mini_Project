@@ -3,7 +3,6 @@ import { updateLoginField } from "../features/patients/patientSlice";
 import { loginPatient } from "../features/patients/patientThunk.js";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
 export default function PatientLogin(){
     const dispatch = useDispatch();
     const {loginForm,loading,error} = useSelector((state)=>state.patientAuth);
@@ -79,13 +78,10 @@ export default function PatientLogin(){
                         {loading ? "Logging in..." : "Login"}
                     </button>
                 </form>
-                
-                <p className="text-center text-gray-600 mt-6">
-                    Create a new account?{" "}
-                    <a href="/register" className="text-indigo-600 hover:underline font-medium">
-                        click here
-                    </a>
-                </p>
+                <button onClick={()=>navigate("/register")} className="text-blue-600 underline">New Patient? Register</button>
+                <hr className="w-1/2 my-4" />
+                <button onClick={() => navigate("/doctor/login")} className="text-green-600">Login as Doctor</button>
+                <button onClick={() => navigate("/admin/login")} className="text-green-600">Login as Admin</button>
             </div>
         </div>
     );
