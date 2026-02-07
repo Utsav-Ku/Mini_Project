@@ -10,6 +10,8 @@ function App() {
   const patient=useSelector((state)=>state.patientAuth.patient);
   return (
     <Routes>
+      {/* Default Route */}
+      <Route path="/" element={<Navigate to="/register"/>}/>
       {/* Public Routes */}
       <Route path="/register" element={<PatientRegister/>}/>
       <Route path="/login" element={<PatientLogin/>}/>

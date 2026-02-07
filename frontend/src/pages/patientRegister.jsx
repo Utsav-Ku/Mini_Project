@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { updateRegisterField } from "../features/patients/patientSlice.js";
 import { registerPatient } from "../features/patients/patientThunk.js";
+import { Link } from "react-router-dom";
 export default function PatientRegister() {
     const dispatch=useDispatch();
     const {registrationForm,loading,error}=useSelector((state)=>state.patientAuth);
@@ -41,6 +42,10 @@ export default function PatientRegister() {
                     <input type="text" id="gender" name="gender" value={registrationForm.gender} onChange={handleChange} className="mt-1 p-2 border rounded w-full" />
                 </div>
                 <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Register</button>
+                <p className="mt-4 text-center">
+                    Already have an account?{" "}
+                    <Link to="/login" className="text-blue-500">Login</Link>
+                </p>        
             </form>
         </div>
     )

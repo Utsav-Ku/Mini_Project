@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+const storedPatient=localStorage.getItem("patient");
 const initialState={
     registrationForm:{
         name:"",
@@ -14,7 +15,7 @@ const initialState={
     },
     loading:false,
     error:null,
-    patient:null
+    patient:storedPatient?JSON.parse(storedPatient):null
 }
 const patientAuthSlice=createSlice({
     name:"patientAuth",
