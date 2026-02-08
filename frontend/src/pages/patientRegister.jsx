@@ -2,14 +2,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateRegisterField } from "../features/patients/patientSlice.js";
 import { registerPatient } from "../features/patients/patientThunk.js";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function PatientRegister() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {registrationForm, loading, error} = useSelector((state) => state.patientAuth);
     
     function handleSubmit(e){
         e.preventDefault();
-        dispatch(registerPatient())
+        dispatch(registerPatient()).then(() => {
+            navigate("/patient/home");
+        })
     }
         
     const handleChange = (e) => {
