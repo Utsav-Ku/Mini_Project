@@ -1,5 +1,5 @@
 import axios from "axios";
-import { authStart, authSuccess, authFailure,resetRegisterForm,resetLoginForm,logout,fetchPatientsStart,fetchPatientsSuccess,fetchPatientsFailure} from "./patientSlice.js";
+import { authStart, authSuccess, authFailure,resetRegisterForm,resetLoginForm,logout,fetchPatientsStart,fetchPatientsSuccess,fetchPatientsFailure,updatePatientProfileStart,updatePatientProfileSuccess,updatePatientProfileFailure} from "./patientSlice.js";
 const BASE_URI="http://localhost:3000/patients"
 export const registerPatient=()=>async(dispatch,getState)=>{
     try {
@@ -64,6 +64,27 @@ export const fetchPatients=()=>async(dispatch)=>{
         dispatch(fetchPatientsFailure(error.message))
     }
 }
+export const updatePatientProfile=(updatedData)=>async(dispatch,getState)=>{
+  try {
+    dispatch(updatePatientProfileStart());
+    const {patient}=getState().patientAuth;
+    if(!patient){
+      dispatch(updatePatientProfileFailure("Patient not logged in"));
+      return;
+    }
+    const res = await axios.patch(
+      `${BASE_URI}/${patient.id}`,
+      updatedData
+    );
+    // Update redux state
+    dispatch(updatePatientProfileSuccess(res.data));
+    // Update localStorage
+    localStorage.setItem("patient", JSON.stringify(res.data));
+  } catch (error) {
+    dispatch(updatePatientProfileFailure(error.message));
+  }
+};
+
 
 
 

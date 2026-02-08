@@ -1,5 +1,5 @@
 import axios from "axios";
-import { doctorLoginStart,doctorLoginSuccess,doctorLoginFailure } from "./doctorAuthSlice.js";
+import { doctorLoginStart,doctorLoginSuccess,doctorLoginFailure,doctorLogout } from "./doctorAuthSlice.js";
 export const doctorLogin = ({email,password}) => async (dispatch) => {
     dispatch(doctorLoginStart());
     try {
@@ -16,4 +16,8 @@ export const doctorLogin = ({email,password}) => async (dispatch) => {
     } catch (error) {
         dispatch(doctorLoginFailure(error.message));
     }
+};
+export const doctorlogout = () => (dispatch) => {
+    localStorage.removeItem("doctor");
+    dispatch(doctorLogout());
 };

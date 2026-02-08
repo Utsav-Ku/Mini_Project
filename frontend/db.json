@@ -255,7 +255,7 @@
       "doctorId": "10",
       "patientId": "c512",
       "slot": "09:00 - 09:30",
-      "status": "pending",
+      "status": "accepted",
       "date": "2026-02-07"
     },
     {
@@ -273,7 +273,7 @@
       "name": "utkarsh Kumar",
       "email": "utkarshkumarsingh8789@gmail.com",
       "password": "123456Aa@",
-      "age": "22",
+      "age": "23",
       "gender": "Male"
     },
     {

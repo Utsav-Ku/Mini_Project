@@ -15,29 +15,25 @@ import AdminDoctors from "./pages/admin/AdminDoctors.jsx"
 import AddDoctor from "./pages/admin/AddDoctor.jsx"
 import AdminAppointments from "./pages/admin/AdminAppointments.jsx"
 import AdminRoute from "./pages/admin/AdminRoutes.jsx"
-// import DoctorHomePage from "./pages/DoctorHomePage.jsx"
-// import AdminHomePage from "./pages/AdminHomePage.jsx"
+import DoctorHomePage from "./pages/DoctorHomePage.jsx"
+import PatientProfilePage from "./pages/patientProfilePage.jsx"
 function App() {
   const patient=useSelector((state)=>state.patientAuth.patient);
   const doctor=useSelector((state)=>state.doctorAuth.doctor);
-  // const admin=useSelector((state)=>state.adminAuth.admin);
   return (
     <Routes>
       {/* Default Route */}
       <Route path="/" element={<PatientLogin />} />
-
       {/* Auth Routes */}
       <Route path="/register" element={<PatientRegister/>}/>
       <Route path="/doctor/login" element={<DoctorLogin/>}/>
       <Route path="/admin/login" element={<AdminLogin/>}/>
-      {/* <Route path="/admin/dashboard" element={<AdminHomePage/>} /> */}
-
       {/* Patient Routes */}
       <Route path="/patient/home" element={patient ? <PatientHomePage /> : <Navigate to="/" />}/>
       <Route path="/doctor/:id" element={patient ? <DoctorDetails /> : <Navigate to="/" />}/>
-    
+      <Route path="/patient/profile" element={patient ? <PatientProfilePage /> : <Navigate to="/" />}/>
       {/* Doctor Routes */}
-      <Route path="/doctor/home" element={doctor ? <DoctorHomePage /> : <Navigate to="/doctor/login" />}/>
+      <Route path="/doctor/home" element={doctor ? <DoctorHomePage /> : <Navigate to="/" />}/>
 
       {/* Admin Routes */}
       {/* <Route path="/admin/home" element={admin ? <AdminHomePage /> : <Navigate to="/admin/login" />}/> */}

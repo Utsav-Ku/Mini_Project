@@ -66,8 +66,21 @@ const patientAuthSlice=createSlice({
         fetchPatientsFailure:(state,action)=>{
             state.loading=false;
             state.error=action.payload;
+        },
+        updatePatientProfileStart:(state)=>{
+            state.loading=true;
+            state.error=null;
+        },
+        updatePatientProfileSuccess:(state,action)=>{
+            state.loading=false;
+            state.error=null;
+            state.patient=action.payload;
+        },
+        updatePatientProfileFailure:(state,action)=>{
+            state.loading=false;
+            state.error=action.payload;
         }
     }
 })
-export const {updateRegisterField,updateLoginField,resetRegisterForm,resetLoginForm,authStart,authSuccess,authFailure,logout,fetchPatientsStart,fetchPatientsSuccess,fetchPatientsFailure}=patientAuthSlice.actions;
+export const {updateRegisterField,updateLoginField,resetRegisterForm,resetLoginForm,authStart,authSuccess,authFailure,logout,fetchPatientsStart,fetchPatientsSuccess,fetchPatientsFailure,updatePatientProfileStart,updatePatientProfileSuccess,updatePatientProfileFailure}=patientAuthSlice.actions;
 export default patientAuthSlice.reducer;
