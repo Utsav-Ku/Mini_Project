@@ -1,5 +1,5 @@
 import axios from "axios";
-import { authStart, authSuccess, authFailure,resetRegisterForm,resetLoginForm,logout} from "./patientSlice.js";
+import { authStart, authSuccess, authFailure,resetRegisterForm,resetLoginForm,logout,fetchPatientsStart,fetchPatientsSuccess,fetchPatientsFailure} from "./patientSlice.js";
 const BASE_URI="http://localhost:3000/patients"
 export const registerPatient=()=>async(dispatch,getState)=>{
     try {
@@ -54,6 +54,15 @@ export const loginPatient=()=>async(dispatch,getState)=>{
 export const logoutPatient=()=> (dispatch)=>{
     localStorage.removeItem("patient")
     dispatch(logout())
+}
+export const fetchPatients=()=>async(dispatch)=>{
+    try {
+        dispatch(fetchPatientsStart())
+        const res=await axios.get(BASE_URI)
+        dispatch(fetchPatientsSuccess(res.data))
+    } catch (error) {
+        dispatch(fetchPatientsFailure(error.message))
+    }
 }
 
 

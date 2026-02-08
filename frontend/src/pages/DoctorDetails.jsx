@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { bookAppointment } from "../features/appointments/appointmentThunk";
+import { bookAppointment } from "../features/appointments/appointmentThunk.js";
 import { useState } from "react";
 export default function DoctorDetails() {
   const {id}=useParams();
@@ -37,7 +37,7 @@ export default function DoctorDetails() {
       (appt)=>
         appt.doctorId===doctor.id&&
         appt.slot===slot&&
-        appt.status!=="cancelled"
+        appt.status==="accepted"
     );
   };
   const handleBookAppointment=()=>{

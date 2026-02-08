@@ -15,7 +15,8 @@ const initialState={
     },
     loading:false,
     error:null,
-    patient:storedPatient?JSON.parse(storedPatient):null
+    patient:storedPatient?JSON.parse(storedPatient):null,
+    patients:[]
 }
 const patientAuthSlice=createSlice({
     name:"patientAuth",
@@ -52,8 +53,21 @@ const patientAuthSlice=createSlice({
             state.patient=null;
             state.loading=false;
             state.error=null;
+        },
+        fetchPatientsStart:(state)=>{
+            state.loading=true;
+            state.error=null;
+        },
+        fetchPatientsSuccess:(state,action)=>{
+            state.loading=false;
+            state.error=null;
+            state.patients=action.payload;
+        },
+        fetchPatientsFailure:(state,action)=>{
+            state.loading=false;
+            state.error=action.payload;
         }
     }
 })
-export const {updateRegisterField,updateLoginField,resetRegisterForm,resetLoginForm,authStart,authSuccess,authFailure,logout}=patientAuthSlice.actions;
+export const {updateRegisterField,updateLoginField,resetRegisterForm,resetLoginForm,authStart,authSuccess,authFailure,logout,fetchPatientsStart,fetchPatientsSuccess,fetchPatientsFailure}=patientAuthSlice.actions;
 export default patientAuthSlice.reducer;

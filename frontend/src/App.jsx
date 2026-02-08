@@ -19,7 +19,7 @@ import AdminRoute from "./pages/admin/AdminRoutes.jsx"
 // import AdminHomePage from "./pages/AdminHomePage.jsx"
 function App() {
   const patient=useSelector((state)=>state.patientAuth.patient);
-  // const doctor=useSelector((state)=>state.doctorAuth.doctor);
+  const doctor=useSelector((state)=>state.doctorAuth.doctor);
   // const admin=useSelector((state)=>state.adminAuth.admin);
   return (
     <Routes>
@@ -37,7 +37,7 @@ function App() {
       <Route path="/doctor/:id" element={patient ? <DoctorDetails /> : <Navigate to="/" />}/>
     
       {/* Doctor Routes */}
-      {/* <Route path="/doctor/home" element={doctor ? <DoctorHomePage /> : <Navigate to="/doctor/login" />}/> */}
+      <Route path="/doctor/home" element={doctor ? <DoctorHomePage /> : <Navigate to="/doctor/login" />}/>
 
       {/* Admin Routes */}
       {/* <Route path="/admin/home" element={admin ? <AdminHomePage /> : <Navigate to="/admin/login" />}/> */}
