@@ -1,33 +1,39 @@
-import { useDispatch, useSelector } from "react-redux";
-import { updateLoginField } from "../features/patients/patientSlice";
-import { loginPatient } from "../features/patients/patientThunk.js";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { adminLogin } from "../features/admin/adminSlice";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
-export default function PatientLogin() {
+export default function AdminLogin() {
+
     const dispatch = useDispatch();
-    const { loginForm, loading, error } = useSelector((state) => state.patientAuth);
-    const patient = useSelector((state) => state.patientAuth.patient);
     const navigate = useNavigate();
-    
+
+    const { loading, error, isAuthenticated } = useSelector((state) => state.admin);
+
+    const [formData, setFormData] = useState({
+        email: "",
+        password: ""
+    })
+
     useEffect(() => {
-        if (patient) {
-            navigate("/patient/home");
+        if (isAuthenticated) {
+            alert("Logged in successfully✅");
+            navigate("/admin/dashboard");
         }
-    }, [patient]);
-    
-    console.log("Logged in patient:", patient);
-    
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        dispatch(updateLoginField({ field: name, value: value }));
+    }, [isAuthenticated, navigate])
+
+    function handleChange(e) {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
     }
-    
-    const handleSubmit = (e) => {
+
+    function handleSubmit(e) {
         e.preventDefault();
-        dispatch(loginPatient());
+        dispatch(adminLogin(formData));
     }
-    
+
     return (
         <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 min-h-screen flex items-center justify-center p-4">
             <div className="w-full max-w-5xl flex flex-col md:flex-row bg-white rounded-3xl shadow-2xl overflow-hidden">
@@ -97,8 +103,8 @@ export default function PatientLogin() {
                 {/* Right Side - Login Form */}
                 <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
                     <div className="max-w-md w-full mx-auto">
-                        <h2 className="text-4xl font-bold text-gray-800 mb-2">Welcome Back</h2>
-                        <p className="text-gray-600 mb-8">Please log in to book appointment</p>
+                        <h2 className="text-4xl font-bold text-gray-800 mb-2">Admin Login</h2>
+                        <p className="text-gray-600 mb-8">Please login to continue</p>
 
                         {/* Error Message */}
                         {error && (
@@ -116,17 +122,17 @@ export default function PatientLogin() {
                             {/* Email Field */}
                             <div>
                                 <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                                    Email Address
+                                    Admin Email
                                 </label>
                                 <input 
                                     type="email" 
                                     id="email" 
                                     name="email"
-                                    value={loginForm.email}
+                                    value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
-                                    placeholder="Enter your email"
+                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                                    placeholder="Enter admin email"
                                 />
                             </div>
 
@@ -139,38 +145,38 @@ export default function PatientLogin() {
                                     type="password" 
                                     id="password" 
                                     name="password"
-                                    value={loginForm.password}
+                                    value={formData.password}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
+                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
                                     placeholder="Enter your password"
                                 />
                             </div>
 
                             {/* Login Buttons */}
                             <div className="space-y-3 pt-2">
-                                {/* Login as Patient Button */}
+                                {/* Login as Admin Button */}
                                 <button 
                                     type="submit"
                                     disabled={loading}
-                                    className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                                >
-                                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                                    </svg>
-                                    {loading ? "Logging in..." : "Login as Patient"}
-                                </button>
-                                
-                                {/* Login as Admin Button */}
-                                <button 
-                                    type="button"
-                                    onClick={() => navigate("/admin/login")}
-                                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 flex items-center justify-center"
+                                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                     </svg>
-                                    Login as Admin
+                                    {loading ? "Logging in..." : "Login as Admin"}
+                                </button>
+                                
+                                {/* Login as Patient Button */}
+                                <button 
+                                    type="button"
+                                    onClick={() => navigate("/")}
+                                    className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 flex items-center justify-center"
+                                >
+                                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                    Login as Patient
                                 </button>
 
                                 {/* Login as Doctor Button */}
@@ -189,16 +195,7 @@ export default function PatientLogin() {
 
                         {/* Additional Links */}
                         <div className="mt-6 text-center">
-                            <p className="text-gray-600 text-sm">
-                                Not yet Registered? 
-                                <button 
-                                    onClick={() => navigate("/register")} 
-                                    className="text-indigo-600 hover:text-indigo-700 font-medium ml-1"
-                                >
-                                    Register
-                                </button>
-                            </p>
-                            <a href="#" className="text-sm text-blue-600 hover:text-blue-700 mt-2 inline-block">
+                            <a href="#" className="text-sm text-blue-600 hover:text-blue-700">
                                 Forgot Password?
                             </a>
                         </div>
@@ -206,5 +203,5 @@ export default function PatientLogin() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
