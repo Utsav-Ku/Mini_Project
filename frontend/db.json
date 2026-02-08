@@ -9,21 +9,6 @@
   ],
   "doctors": [
     {
-<<<<<<< HEAD
-=======
-      "id": "1",
-      "name": "Dr. Amit Sharma",
-      "specialization": "Cardiology",
-      "experience": 12,
-      "image": "https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",
-      "workStart": "09:00",
-      "workEnd": "17:00",
-      "slotDuration": 30,
-      "email": "amit@hospital.com",
-      "password": "doctor123"
-    },
-    {
->>>>>>> e2686a033432ba7752b1dac35fdc3e99b7343d1d
       "id": "2",
       "name": "Dr. Arjun",
       "specialization": "Cardiology",
@@ -279,36 +264,7 @@
       "patientId": "c512",
       "slot": "09:00 - 09:30",
       "status": "pending",
-<<<<<<< HEAD
       "date": "2026-02-25"
-=======
-      "date": "2026-02-07",
-      "id": "xGhPBL9"
-    },
-    {
-      "id": "c8e6",
-      "doctorId": "7",
-      "patientId": "c512",
-      "slot": "10:00 - 10:30",
-      "status": "pending",
-      "date": "2026-02-08"
-    },
-    {
-      "id": "5a27",
-      "doctorId": "1",
-      "patientId": "c512",
-      "slot": "09:30 - 10:00",
-      "status": "pending",
-      "date": "2026-02-08"
-    },
-    {
-      "id": "e919",
-      "doctorId": "10",
-      "patientId": "c512",
-      "slot": "12:30 - 13:00",
-      "status": "pending",
-      "date": "2026-02-08"
->>>>>>> e2686a033432ba7752b1dac35fdc3e99b7343d1d
     }
   ],
   "patients": [
