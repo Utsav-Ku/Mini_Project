@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { bookAppointment } from "../features/appointments/appointmentThunk.js";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { fetchAppointments } from "../features/appointments/appointmentThunk.js";
 export default function DoctorDetails() {
   const {id}=useParams();
   const dispatch=useDispatch();
@@ -14,6 +15,9 @@ export default function DoctorDetails() {
   if(!doctor){
     return <p>Doctor not found</p>;
   }
+  useEffect(()=>{
+    dispatch(fetchAppointments());
+  },[dispatch]);
   const generateSlots=()=>{
     const slots=[]
     const [startH,startM]=doctor.workStart.split(":").map(Number);
@@ -40,6 +44,7 @@ export default function DoctorDetails() {
         appt.status==="accepted"
     );
   };
+  console.log("appointments",appointments);
   const handleBookAppointment=()=>{
     if(!selectedSlot){
       alert("Please select a slot");
