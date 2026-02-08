@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { bookAppointment } from "../features/appointments/appointmentThunk.js";
 import { useState,useEffect } from "react";
 import { fetchAppointments } from "../features/appointments/appointmentThunk.js";
+import { fetchDoctors } from "../features/doctors/doctorThunk.js";
 export default function DoctorDetails() {
   const {id}=useParams();
   const dispatch=useDispatch();
@@ -10,6 +11,11 @@ export default function DoctorDetails() {
   console.log("doctors",doctors);
   const appointments=useSelector((state)=>state.appointments.appointments);
   const patient=useSelector((state)=>state.patientAuth.patient);
+  useEffect(()=>{
+    if(doctors.length===0){
+      dispatch(fetchDoctors());
+    }
+  },[dispatch]);
   const doctor=doctors.find((doc)=>doc.id===id);
   const [selectedSlot,setSelectedSlot]=useState(null);
   if(!doctor){

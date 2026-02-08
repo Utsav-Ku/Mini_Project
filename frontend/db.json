@@ -281,6 +281,30 @@
       "status": "pending",
       "date": "2026-02-08",
       "id": "hO7Qzc2"
+    },
+    {
+      "id": "d09c",
+      "doctorId": "2",
+      "patientId": "c512",
+      "slot": "10:30 - 11:00",
+      "status": "rejected",
+      "date": "2026-02-08"
+    },
+    {
+      "id": "08cc",
+      "doctorId": "3",
+      "patientId": "c512",
+      "slot": "09:00 - 09:30",
+      "status": "pending",
+      "date": "2026-02-08"
+    },
+    {
+      "id": "4db6",
+      "doctorId": "10",
+      "patientId": "pZIndcf",
+      "slot": "14:30 - 15:00",
+      "status": "pending",
+      "date": "2026-02-08"
     }
   ],
   "patients": [
@@ -313,7 +337,7 @@
       "email": "shivam@gmail.com",
       "password": "shivam",
       "age": "32",
-      "gender": "Female",
+      "gender": "Male",
       "id": "pZIndcf"
     }
   ]

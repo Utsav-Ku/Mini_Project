@@ -17,6 +17,7 @@ import AdminAppointments from "./pages/admin/AdminAppointments.jsx"
 import AdminRoute from "./pages/admin/AdminRoutes.jsx"
 import DoctorHomePage from "./pages/DoctorHomePage.jsx"
 import PatientProfilePage from "./pages/patientProfilePage.jsx"
+import PatientDashboard from "./pages/patientDashBoard.jsx"
 function App() {
   const patient=useSelector((state)=>state.patientAuth.patient);
   const doctor=useSelector((state)=>state.doctorAuth.doctor);
@@ -32,6 +33,7 @@ function App() {
       <Route path="/patient/home" element={patient ? <PatientHomePage /> : <Navigate to="/" />}/>
       <Route path="/doctor/:id" element={patient ? <DoctorDetails /> : <Navigate to="/" />}/>
       <Route path="/patient/profile" element={patient ? <PatientProfilePage /> : <Navigate to="/" />}/>
+      <Route path="/patient/dashboard" element={patient ? <PatientDashboard /> : <Navigate to="/" />}/>
       {/* Doctor Routes */}
       <Route path="/doctor/home" element={doctor ? <DoctorHomePage /> : <Navigate to="/" />}/>
 
